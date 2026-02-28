@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Tesoros de Cusco</title>
+    <style>
+        body { font-family: 'Comic Sans MS', sans-serif; background: #f0fdfa; text-align: center; }
+        .caja { border: 5px solid #e11d48; border-radius: 20px; padding: 20px; margin: 20px auto; width: 300px; background: white; }
+        button { background: #059669; color: white; border: none; padding: 10px; border-radius: 10px; cursor: pointer; }
+        li { list-style: none; background: #d1fae5; margin: 5px; padding: 5px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>💎 Mi Inventario Mágico</h1>
+    <div class="caja">
+        <input type="text" id="tesoroInput" placeholder="Escribe un tesoro...">
+        <button onclick="guardarTesoro()">¡Guardar!</button>
+    </div>
+    <ul id="listaTesoros"></ul>
+
+    <script>
+        // Función para guardar información
+        function guardarTesoro() {
+            let input = document.getElementById('tesoroInput');
+            let lista = document.getElementById('listaTesoros');
+            
+            if(input.value !== "") {
+                // Creamos un elemento en la lista
+                let nuevoItem = document.createElement('li');
+                nuevoItem.innerText = "✨ " + input.value;
+                lista.appendChild(nuevoItem);
+                
+                // Limpiamos para el siguiente tesoro
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
